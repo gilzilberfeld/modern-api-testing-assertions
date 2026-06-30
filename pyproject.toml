@@ -1,0 +1,11 @@
+[tool.pytest.ini_options]
+testpaths = [
+    "00_green_mirage",
+    "01_api_level",
+    "02_feature_level",
+    "03_structural",
+    "04_concurrency",
+    "05_load",
+    "06_security",
+    "07_reliability",
+]
