@@ -12,3 +12,4 @@ env/
 .venv/
 *.log
 .locust/
+.idea
