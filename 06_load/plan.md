@@ -1,6 +1,4 @@
-# Round 5: Load
-
-Load testing answers a different question: not "does it work" but "does it hold up."
+# Round 6: Load
 
 ## Test plan
 
@@ -22,5 +20,5 @@ Load testing answers a different question: not "does it work" but "does it hold 
 
 **Command:**
 ```
-locust -f 05_load/locustfile.py --headless -u 100 -r 10 -t 30s --host http://localhost:5000
+locust -f 06_load/locustfile.py --headless -u 100 -r 10 -t 30s --host http://localhost:5000
 ```

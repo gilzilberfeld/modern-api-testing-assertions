@@ -1,4 +1,4 @@
-# Round 6: Security
+# Round 7: Security
 
 The auth model has two questions: authentication (who are you?) and authorization (what can you do?).
 

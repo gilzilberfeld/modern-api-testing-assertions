@@ -23,7 +23,12 @@ def post_review(book_id, rating=4, comment="Good book"):
 
 
 def test_response_contains_all_fields(book):
-    resp = post_review(book["id"])
+    book_id = book["id"]
+    resp = requests.post(
+        f"{BASE_URL}/books/{book_id}/reviews",
+        json={"rating": 4, "comment": "Good book"},
+        headers=AUTH_HEADER,
+    )
     assert resp.status_code == 201
     body = resp.json()
     assert "id" in body

@@ -1,4 +1,4 @@
-# Round 7: Reliability (Plan Only)
+# Round 8: Reliability (Plan Only)
 
 The scenarios below require infrastructure we don't have: persistent storage, multiple nodes, a backup/restore system, a time-zone-aware test harness.
 

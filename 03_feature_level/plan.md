@@ -1,10 +1,8 @@
-# Round 2: Feature Level
+# Round 3: Feature Level
 
-The feature isn't just POST /reviews. The feature is "add a review to a book." That involves multiple endpoints working together correctly.
+## What's missing from Round 1 & 2
 
-## What's missing from Round 1
-
-Round 1 tested the POST endpoint in isolation. We never verified:
+Round 1-2 tested the POST endpoint in isolation. We never verified:
 - The review actually appears when you list reviews
 - Edits are reflected in listing endpoints
 - Deletes actually remove the data

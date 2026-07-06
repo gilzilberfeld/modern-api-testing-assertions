@@ -1,10 +1,8 @@
-# Round 3: Structural
+# Round 4: Structural
 
-Knowing the server's internals unlocks a new testing dimension. The server calls a moderation service — that's an external dependency with failure modes we can now exercise deliberately.
+## What's missing from Round 3
 
-## What's missing from Round 2
-
-Round 2 tested the happy path and basic error cases. It assumed:
+Round 3 tested the happy path and basic error cases. It assumed:
 - The moderation service always approves
 - Clients always send well-formed JSON
 

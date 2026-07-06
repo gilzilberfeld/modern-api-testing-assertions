@@ -1,4 +1,4 @@
-# Round 2 Prompt
+# Round 3 Prompt
 
 I have a bookstore API. There's a feature: "add a review to a book."
 
@@ -11,4 +11,4 @@ Endpoints:
 
 Auth: Authorization: Bearer <token>. Tokens: "token-user-1" → user-1, "token-user-2" → user-2.
 
-Write pytest tests for the full "add a review" feature — not just the POST endpoint, but the entire workflow: creating reviews, verifying they appear in listing endpoints, editing them, deleting them. Include edge cases around non-existent resources and data isolation between books.
+Write a test plan for the full "add a review" feature — not just the POST endpoint, but the entire workflow: creating reviews, verifying they appear in listing endpoints, editing them, deleting them. Include edge cases around non-existent resources and data isolation between books.

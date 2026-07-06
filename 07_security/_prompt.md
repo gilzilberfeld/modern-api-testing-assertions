@@ -1,4 +1,4 @@
-# Round 6 Prompt
+# Round 7 Prompt
 
 The bookstore API uses token-based auth. 
 
@@ -8,7 +8,7 @@ The bookstore API uses token-based auth.
 - GET endpoints are public (no auth required)
 - Only the review's author (matched by user_id from the token) can edit or delete their review
 
-Write pytest tests verifying:
+Write a test plan verifying:
 1. Authenticated users can create reviews
 2. Unauthenticated requests to write endpoints return 401
 3. Invalid tokens return 401

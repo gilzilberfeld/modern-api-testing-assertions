@@ -1,4 +1,4 @@
-# Round 5 Prompt
+# Round 6 Prompt
 
 Write a Locust load test for the bookstore review API.
 
@@ -9,4 +9,4 @@ Setup: create a book in on_start (one per user). Then:
 Auth header: "Authorization: Bearer token-user-1"
 
 The file should work with:
-  locust -f 05_load/locustfile.py --headless -u 100 -r 10 -t 30s --host http://localhost:5000
+  locust -f 06_load/locustfile.py --headless -u 100 -r 10 -t 30s --host http://localhost:5000

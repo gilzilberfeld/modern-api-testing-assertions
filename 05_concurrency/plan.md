@@ -1,6 +1,4 @@
-# Round 4: Concurrency
-
-The store uses threading.Lock() — but does it actually hold up under concurrent load?
+# Round 5: Concurrency
 
 ## Test plan
 
