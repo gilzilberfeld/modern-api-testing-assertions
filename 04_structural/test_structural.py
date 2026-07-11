@@ -20,7 +20,7 @@ def book():
     requests.delete(f"{BASE_URL}/books/{b['id']}")
 
 
-def mock_moderation(config):
+def configure_moderation(config):
     requests.post(f"{MODERATION_URL}/admin/configure", json=config)
 
 
@@ -33,47 +33,47 @@ def post_review(book_id, comment="Normal review", rating=4):
 
 
 def test_moderation_rejection_returns_422_and_reason(book):
-    mock_moderation({"mode": "reject", "reject_reason": "Offensive language"})
+    configure_moderation({"mode": "reject", "reject_reason": "Offensive language"})
     resp = post_review(book["id"])
     assert resp.status_code == 422
     assert "Offensive language" in resp.json().get("reason", "")
 
 
 def test_rejected_review_is_not_saved(book):
-    mock_moderation({"mode": "reject"})
+    configure_moderation({"mode": "reject"})
     post_review(book["id"])
     reviews = requests.get(f"{BASE_URL}/books/{book['id']}/reviews").json()
     assert len(reviews) == 0
 
 
 def test_moderation_error_returns_503(book):
-    mock_moderation({"mode": "error"})
+    configure_moderation({"mode": "error"})
     resp = post_review(book["id"])
     assert resp.status_code == 503
 
 
 def test_moderation_error_review_not_saved(book):
-    mock_moderation({"mode": "error"})
+    configure_moderation({"mode": "error"})
     post_review(book["id"])
     reviews = requests.get(f"{BASE_URL}/books/{book['id']}/reviews").json()
     assert len(reviews) == 0
 
 
 def test_moderation_timeout_returns_504(book):
-    mock_moderation({"mode": "delay", "delay_seconds": 5})
+    configure_moderation({"mode": "delay", "delay_seconds": 5})
     resp = post_review(book["id"])
     assert resp.status_code == 504
 
 
 def test_moderation_timeout_review_not_saved(book):
-    mock_moderation({"mode": "delay", "delay_seconds": 5})
+    configure_moderation({"mode": "delay", "delay_seconds": 5})
     post_review(book["id"])
     reviews = requests.get(f"{BASE_URL}/books/{book['id']}/reviews").json()
     assert len(reviews) == 0
 
 
 def test_system_healthy_after_moderation_failure(book):
-    mock_moderation({"mode": "error"})
+    configure_moderation({"mode": "error"})
     post_review(book["id"], comment="Will fail")
     requests.post(f"{MODERATION_URL}/admin/reset")
 
