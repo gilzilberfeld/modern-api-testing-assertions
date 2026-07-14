@@ -6,8 +6,6 @@ Round 3 tested the happy path and basic error cases. It assumed:
 - The moderation service always approves
 - Clients always send well-formed JSON
 
-Neither assumption holds in production.
-
 ## Test plan
 
 **Moderation dependency:**
